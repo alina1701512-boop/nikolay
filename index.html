@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ахмад Салла́х — Восстановление тела и нервной системы</title>
+  <title>Ahmed Sallaah · Restoring Body & Nervous System</title>
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Ахмад Салла́х — Восстановление тела" />
-  <meta property="og:description" content="Миофасциальная терапия, остеопатия, массаж, мануальная терапия, кинезиология. Работа с причиной." />
+  <meta property="og:title" content="Ahmed Sallaah — Restoring Body & Nervous System" />
+  <meta property="og:description" content="Bespoke myofascial therapy, osteopathy, massage, manual therapy, and kinesiology. We treat the cause, not just the symptom." />
   <meta property="og:image" content="https://via.placeholder.com/1200x630/1a3a2a/ffffff?text=Sallaah+Therapy" />
-  <meta name="description" content="Миофасциальная терапия, остеопатия, массаж, мануальная терапия, кинезиология. Восстановление тела и нервной системы." />
+  <meta name="description" content="Bespoke myofascial therapy, osteopathy, massage, manual therapy, and kinesiology. Restoring body and nervous system." />
 
   <!-- Шрифты -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
@@ -33,12 +33,72 @@
       color: #1e2b26;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Арабский шрифт */
+    body[dir="rtl"] {
+      font-family: 'Cairo', 'Inter', sans-serif;
     }
 
     .container {
       max-width: 1140px;
       margin: 0 auto;
       padding: 0 20px;
+    }
+
+    /* ----- ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ ----- */
+    .lang-switcher {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 200;
+      display: flex;
+      gap: 8px;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 8px 12px;
+      border-radius: 40px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      border: 1px solid #e0dad5;
+    }
+
+    body[dir="rtl"] .lang-switcher {
+      right: auto;
+      left: 20px;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #4d6b5b;
+      cursor: pointer;
+      padding: 6px 14px;
+      border-radius: 30px;
+      transition: all 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lang-btn i {
+      font-size: 1rem;
+    }
+
+    .lang-btn.active {
+      background: #1e4d3a;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(30, 77, 58, 0.3);
+    }
+
+    .lang-btn:hover:not(.active) {
+      background: #e8e3de;
+      color: #0f261e;
     }
 
     /* ----- КНОПКИ ----- */
@@ -201,6 +261,11 @@
       margin-right: 6px;
     }
 
+    body[dir="rtl"] .hero-tags i {
+      margin-right: 0;
+      margin-left: 6px;
+    }
+
     .hero-cta {
       display: flex;
       flex-wrap: wrap;
@@ -278,7 +343,7 @@
       color: #c7e0d2;
     }
 
-    /* ----- МЕТОДЫ (3 в ряд) ----- */
+    /* ----- МЕТОДЫ ----- */
     .methods {
       padding: 70px 0 60px;
       background: #ffffff;
@@ -380,7 +445,7 @@
       font-size: 0.95rem;
     }
 
-    /* ----- ВИДЕО (вертикальный формат) ----- */
+    /* ----- ВИДЕО ----- */
     .video-section {
       padding: 60px 0;
       background: #ffffff;
@@ -467,6 +532,11 @@
       font-weight: 500;
     }
 
+    body[dir="rtl"] .cta-left .contacts-block a {
+      margin-right: 0;
+      margin-left: 24px;
+    }
+
     .cta-left .contacts-block a i {
       font-size: 1.4rem;
     }
@@ -543,6 +613,11 @@
       margin-left: 18px;
     }
 
+    body[dir="rtl"] .footer a {
+      margin-left: 0;
+      margin-right: 18px;
+    }
+
     .footer a:hover {
       color: #ffffff;
     }
@@ -553,24 +628,19 @@
         grid-template-columns: 1fr;
         gap: 30px;
       }
-
       .cta-section .container {
         grid-template-columns: 1fr;
         gap: 30px;
       }
-
       .hero-content h1 {
         font-size: 2.2rem;
       }
-
       .hero-visual blockquote {
         font-size: 1.3rem;
       }
-
       .methods-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-
       .video-grid {
         max-width: 400px;
       }
@@ -590,68 +660,54 @@
         align-items: stretch;
         gap: 8px;
       }
-
       .nav-contacts {
         justify-content: space-between;
         flex-wrap: wrap;
       }
-
       .hero {
         padding: 40px 0 50px;
       }
-
       .hero-content h1 {
         font-size: 1.8rem;
       }
-
       .hero-tags span {
         font-size: 0.8rem;
         padding: 2px 12px;
       }
-
       .hero-cta {
         flex-direction: column;
         align-items: stretch;
       }
-
       .hero-cta .phone-big {
         font-size: 1.1rem;
       }
-
       .btn {
         width: 100%;
         text-align: center;
         padding: 14px 20px;
       }
-
       .methods-grid {
         grid-template-columns: 1fr 1fr;
         gap: 14px;
       }
-
       .cta-left h2 {
         font-size: 1.8rem;
       }
-
       .cta-right form {
         padding: 24px 18px;
       }
-
       .footer .container {
         flex-direction: column;
         align-items: center;
         text-align: center;
       }
-
       .footer a {
         margin: 0 8px;
       }
-
       .video-grid {
         grid-template-columns: 1fr;
         max-width: 280px;
       }
-
       .video-wrapper {
         aspect-ratio: 9 / 16;
       }
@@ -661,12 +717,10 @@
       .methods-grid {
         grid-template-columns: 1fr;
       }
-
       .hero-visual .avatar-wrap img {
         width: 56px;
         height: 56px;
       }
-
       .hero-visual blockquote {
         font-size: 1.1rem;
       }
@@ -675,12 +729,17 @@
 </head>
 <body>
 
+  <!-- ====== ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ ====== -->
+  <div class="lang-switcher" id="langSwitcher">
+    <button class="lang-btn active" data-lang="en"><i class="fas fa-globe"></i> EN</button>
+    <button class="lang-btn" data-lang="fr"><i class="fas fa-globe"></i> FR</button>
+    <button class="lang-btn" data-lang="ar"><i class="fas fa-globe"></i> عربي</button>
+  </div>
+
   <!-- ====== НАВИГАЦИЯ ====== -->
   <header class="navbar">
     <div class="container">
-      <div class="logo">
-        Ахмад Салла́х <span>· Therapy</span>
-      </div>
+      <div class="logo" data-i18n="logo">Ahmed Sallaah <span>· Therapy</span></div>
       <div class="nav-contacts">
         <a href="https://vk.com/nikolai_kol" target="_blank" rel="noopener">
           <i class="fab fa-vk"></i> VK
@@ -688,8 +747,8 @@
         <a href="tel:+79869136569">
           <i class="fas fa-phone-alt"></i> +7 986 913 6569
         </a>
-        <a href="https://t.me/AhmadSallaah" target="_blank" rel="noopener" class="tg-link">
-          <i class="fab fa-telegram-plane"></i> Написать
+        <a href="https://t.me/AhmadSallaah" target="_blank" rel="noopener" class="tg-link" data-i18n="writeUs">
+          <i class="fab fa-telegram-plane"></i> Write to us
         </a>
       </div>
     </div>
@@ -699,20 +758,20 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <p class="hero-sub">Восстановление тела и нервной системы</p>
+        <p class="hero-sub" data-i18n="heroSub">Restoring the body and nervous system</p>
         <h1>
-          Работа с <i>причиной</i>,<br />
-          а не со следствием
+          <span data-i18n="heroTitle1">Working with the</span> <i data-i18n="heroTitleItalic">cause</i>,<br />
+          <span data-i18n="heroTitle2">not just the symptom</span>
         </h1>
         <div class="hero-tags">
-          <span><i class="fas fa-hand-holding-heart"></i> Миофасциальная терапия</span>
-          <span><i class="fas fa-bone"></i> Остеопатия</span>
-          <span><i class="fas fa-spa"></i> Массаж</span>
-          <span><i class="fas fa-user-md"></i> Мануальная терапия</span>
-          <span><i class="fas fa-walking"></i> Кинезиология</span>
+          <span><i class="fas fa-hand-holding-heart"></i> <span data-i18n="tag1">Myofascial Therapy</span></span>
+          <span><i class="fas fa-bone"></i> <span data-i18n="tag2">Osteopathy</span></span>
+          <span><i class="fas fa-spa"></i> <span data-i18n="tag3">Massage</span></span>
+          <span><i class="fas fa-user-md"></i> <span data-i18n="tag4">Manual Therapy</span></span>
+          <span><i class="fas fa-walking"></i> <span data-i18n="tag5">Kinesiology</span></span>
         </div>
         <div class="hero-cta">
-          <a href="#form" class="btn">Записаться на приём</a>
+          <a href="#form" class="btn" data-i18n="ctaBtn">Book a consultation</a>
           <a href="tel:+79869136569" class="phone-big">
             <i class="fas fa-phone-alt"></i> +7 986 913 6569
           </a>
@@ -720,14 +779,14 @@
       </div>
       <div class="hero-visual">
         <div class="avatar-wrap">
-          <img src="avatar.webp" alt="Ахмад Салла́х" />
+          <img src="avatar.webp" alt="Ahmed Sallaah" />
           <div class="name-title">
-            Ахмад Салла́х
-            <small>специалист по восстановительным практикам</small>
+            <span data-i18n="name">Ahmed Sallaah</span>
+            <small data-i18n="nameTitle">Restorative practices specialist</small>
           </div>
         </div>
         <blockquote>
-          «Тело помнит всё. <strong>Моя задача</strong> — помочь ему отпустить напряжение и найти баланс.»
+          <span data-i18n="quote1">“The body remembers everything.</span> <strong data-i18n="quote2">My mission</strong> <span data-i18n="quote3">is to help it release tension and find its balance.”</span>
         </blockquote>
       </div>
     </div>
@@ -736,39 +795,15 @@
   <!-- ====== МЕТОДЫ ====== -->
   <section class="methods">
     <div class="container">
-      <h2>Направления работы</h2>
-      <p class="subhead">Комплексный подход, который восстанавливает связь между телом, фасциями и нервной системой.</p>
+      <h2 data-i18n="methodsHead">Areas of expertise</h2>
+      <p class="subhead" data-i18n="methodsSub">A holistic approach that restores the connection between body, fascia, and the nervous system.</p>
       <div class="methods-grid">
-        <div class="method-card">
-          <div class="icon"><i class="fas fa-hand-holding-heart"></i></div>
-          <h3>Миофасциальная терапия</h3>
-          <p>Освобождение фасциальных ограничений, восстановление подвижности тканей.</p>
-        </div>
-        <div class="method-card">
-          <div class="icon"><i class="fas fa-bone"></i></div>
-          <h3>Остеопатия</h3>
-          <p>Мягкая ручная диагностика и коррекция структурных дисбалансов тела.</p>
-        </div>
-        <div class="method-card">
-          <div class="icon"><i class="fas fa-spa"></i></div>
-          <h3>Массаж</h3>
-          <p>Глубокое расслабление мышц, улучшение кровотока и лимфотока.</p>
-        </div>
-        <div class="method-card">
-          <div class="icon"><i class="fas fa-user-md"></i></div>
-          <h3>Мануальная терапия</h3>
-          <p>Восстановление суставов и позвоночника через безопасные техники.</p>
-        </div>
-        <div class="method-card">
-          <div class="icon"><i class="fas fa-walking"></i></div>
-          <h3>Кинезиология</h3>
-          <p>Работа с движением, мышечным тестированием и нервной регуляцией.</p>
-        </div>
-        <div class="method-card" style="border-bottom-color:#1e4d3a; background:#edf3ef;">
-          <div class="icon"><i class="fas fa-brain"></i></div>
-          <h3>Нервная система</h3>
-          <p>Восстановление вегетативного баланса, снятие хронического стресса.</p>
-        </div>
+        <div class="method-card"><div class="icon"><i class="fas fa-hand-holding-heart"></i></div><h3 data-i18n="method1Title">Myofascial Therapy</h3><p data-i18n="method1Desc">Releasing fascial restrictions and restoring tissue mobility.</p></div>
+        <div class="method-card"><div class="icon"><i class="fas fa-bone"></i></div><h3 data-i18n="method2Title">Osteopathy</h3><p data-i18n="method2Desc">Gentle manual diagnosis and correction of structural imbalances.</p></div>
+        <div class="method-card"><div class="icon"><i class="fas fa-spa"></i></div><h3 data-i18n="method3Title">Massage</h3><p data-i18n="method3Desc">Deep muscular relaxation, improving blood and lymph flow.</p></div>
+        <div class="method-card"><div class="icon"><i class="fas fa-user-md"></i></div><h3 data-i18n="method4Title">Manual Therapy</h3><p data-i18n="method4Desc">Restoring joints and the spine through safe, effective techniques.</p></div>
+        <div class="method-card"><div class="icon"><i class="fas fa-walking"></i></div><h3 data-i18n="method5Title">Kinesiology</h3><p data-i18n="method5Desc">Working with movement, muscle testing, and neural regulation.</p></div>
+        <div class="method-card" style="border-bottom-color:#1e4d3a; background:#edf3ef;"><div class="icon"><i class="fas fa-brain"></i></div><h3 data-i18n="method6Title">Nervous System</h3><p data-i18n="method6Desc">Restoring autonomic balance and relieving chronic stress.</p></div>
       </div>
     </div>
   </section>
@@ -776,52 +811,24 @@
   <!-- ====== ПОЧЕМУ ====== -->
   <section class="why">
     <div class="container">
-      <h2>Почему выбирают этот подход</h2>
+      <h2 data-i18n="whyHead">Why clients choose this approach</h2>
       <div class="why-grid">
-        <div class="why-item">
-          <span class="num">01</span>
-          <div>
-            <h4>Работа с причиной</h4>
-            <p>Я ищу корень проблемы, а не просто снимаю симптомы. Это даёт устойчивый результат.</p>
-          </div>
-        </div>
-        <div class="why-item">
-          <span class="num">02</span>
-          <div>
-            <h4>Интегративный подход</h4>
-            <p>Соединяю остеопатию, массаж и кинезиологию в одной сессии — комплексно и эффективно.</p>
-          </div>
-        </div>
-        <div class="why-item">
-          <span class="num">03</span>
-          <div>
-            <h4>Внимание к нервной системе</h4>
-            <p>Стресс и напряжение копятся в теле. Я помогаю нервной системе переключиться в режим восстановления.</p>
-          </div>
-        </div>
-        <div class="why-item">
-          <span class="num">04</span>
-          <div>
-            <h4>Безопасно и бережно</h4>
-            <p>Все техники мягкие, без грубого воздействия. Тело само включается в процесс исцеления.</p>
-          </div>
-        </div>
+        <div class="why-item"><span class="num">01</span><div><h4 data-i18n="why1Title">Addressing the root cause</h4><p data-i18n="why1Desc">I seek the origin of the issue, rather than simply masking symptoms. This ensures lasting results.</p></div></div>
+        <div class="why-item"><span class="num">02</span><div><h4 data-i18n="why2Title">Integrative methodology</h4><p data-i18n="why2Desc">Combining osteopathy, massage, and kinesiology in a single session for comprehensive effectiveness.</p></div></div>
+        <div class="why-item"><span class="num">03</span><div><h4 data-i18n="why3Title">Nervous system focus</h4><p data-i18n="why3Desc">Stress and tension accumulate in the body. I help the nervous system switch into restoration mode.</p></div></div>
+        <div class="why-item"><span class="num">04</span><div><h4 data-i18n="why4Title">Safe and gentle</h4><p data-i18n="why4Desc">All techniques are soft and non-invasive. The body engages in its own healing process.</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ====== ВИДЕО (вертикальный формат) ====== -->
+  <!-- ====== ВИДЕО ====== -->
   <section class="video-section">
     <div class="container">
-      <h2>Посмотрите, как я работаю</h2>
-      <p class="subhead">Короткие видео о методах и подходе к восстановлению тела.</p>
+      <h2 data-i18n="videoHead">See how I work</h2>
+      <p class="subhead" data-i18n="videoSub">Short videos about my methods and approach to body restoration.</p>
       <div class="video-grid">
-        <div class="video-wrapper">
-          <div id="vk_post_72153221_1728"></div>
-        </div>
-        <div class="video-wrapper">
-          <div id="vk_post_72153221_1729"></div>
-        </div>
+        <div class="video-wrapper"><div id="vk_post_72153221_1728"></div></div>
+        <div class="video-wrapper"><div id="vk_post_72153221_1729"></div></div>
       </div>
     </div>
   </section>
@@ -830,25 +837,25 @@
   <section class="cta-section" id="form">
     <div class="container">
       <div class="cta-left">
-        <h2>Запишитесь на приём</h2>
-        <p>Первичная консультация — это диагностика, работа с телом и план восстановления.</p>
+        <h2 data-i18n="formHead">Book your appointment</h2>
+        <p data-i18n="formSub">Your initial consultation includes diagnosis, hands-on therapy, and a personalised recovery plan.</p>
         <div class="contacts-block">
           <a href="tel:+79869136569"><i class="fas fa-phone-alt"></i> +7 986 913 6569</a>
           <a href="https://t.me/AhmadSallaah" target="_blank" rel="noopener"><i class="fab fa-telegram-plane"></i> Telegram</a>
           <a href="https://vk.com/nikolai_kol" target="_blank" rel="noopener"><i class="fab fa-vk"></i> VK</a>
         </div>
         <p style="opacity:0.7; font-size:0.9rem; margin-top:12px;">
-          <i class="fas fa-map-pin"></i> Работаю в Москве, Казани и онлайн (по запросу)
+          <i class="fas fa-map-pin"></i> <span data-i18n="locations">Working in Moscow, Kazan, and online (upon request)</span>
         </p>
       </div>
       <div class="cta-right">
         <form action="#" method="POST" id="contactForm">
-          <h3>Оставьте заявку</h3>
-          <p class="hint">Я свяжусь с вами в течение 15 минут</p>
-          <input type="text" name="name" placeholder="Ваше имя" required />
-          <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required />
-          <button type="submit" class="btn">Хочу записаться</button>
-          <p class="small-note">Нажимая кнопку, вы соглашаетесь с политикой обработки данных</p>
+          <h3 data-i18n="formTitle">Submit your enquiry</h3>
+          <p class="hint" data-i18n="formHint">I will contact you within 15 minutes</p>
+          <input type="text" name="name" data-i18n-placeholder="namePlaceholder" placeholder="Your name" required />
+          <input type="tel" name="phone" data-i18n-placeholder="phonePlaceholder" placeholder="+7 (___) ___-__-__" required />
+          <button type="submit" class="btn" data-i18n="formBtn">I would like to book</button>
+          <p class="small-note" data-i18n="formNote">By clicking, you agree to the data processing policy</p>
         </form>
       </div>
     </div>
@@ -857,7 +864,7 @@
   <!-- ====== ПОДВАЛ ====== -->
   <footer class="footer">
     <div class="container">
-      <span>© 2026 Ахмад Салла́х · Восстановление тела и нервной системы</span>
+      <span data-i18n="footerCopy">© 2026 Ahmed Sallaah · Restoring body and nervous system</span>
       <div>
         <a href="tel:+79869136569">+7 986 913 6569</a>
         <a href="https://t.me/AhmadSallaah" target="_blank" rel="noopener">Telegram</a>
@@ -879,28 +886,36 @@
     }());
   </script>
 
-  <!-- ====== СКРИПТ ДЛЯ ФОРМЫ ====== -->
+  <!-- ====== МУЛЬТИЯЗЫЧНОСТЬ (i18n) ====== -->
   <script>
     (function() {
-      const form = document.getElementById('contactForm');
-      if (!form) return;
-
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const name = form.querySelector('input[name="name"]').value.trim();
-        const phone = form.querySelector('input[name="phone"]').value.trim();
-
-        if (!name || !phone) {
-          alert('Пожалуйста, заполните имя и телефон.');
-          return;
-        }
-
-        alert('✅ Спасибо, ' + name + '! Я свяжусь с вами по номеру ' + phone + ' в ближайшее время.');
-        form.reset();
-      });
-    })();
-  </script>
-
-</body>
-</html>
+      // --- СЛОВАРИ ПЕРЕВОДОВ (вычитаны, естественный тон) ---
+      const translations = {
+        en: {
+          logo: "Ahmed Sallaah <span>· Therapy</span>",
+          writeUs: "Write to us",
+          heroSub: "Restoring the body and nervous system",
+          heroTitle1: "Working with the",
+          heroTitleItalic: "cause",
+          heroTitle2: "not just the symptom",
+          tag1: "Myofascial Therapy",
+          tag2: "Osteopathy",
+          tag3: "Massage",
+          tag4: "Manual Therapy",
+          tag5: "Kinesiology",
+          ctaBtn: "Book a consultation",
+          name: "Ahmed Sallaah",
+          nameTitle: "Restorative practices specialist",
+          quote1: "“The body remembers everything.",
+          quote2: "My mission",
+          quote3: "is to help it release tension and find its balance.”",
+          methodsHead: "Areas of expertise",
+          methodsSub: "A holistic approach that restores the connection between body, fascia, and the nervous system.",
+          method1Title: "Myofascial Therapy",
+          method1Desc: "Releasing fascial restrictions and restoring tissue mobility.",
+          method2Title: "Osteopathy",
+          method2Desc: "Gentle manual diagnosis and correction of structural imbalances.",
+          method3Title: "Massage",
+          method3Desc: "Deep muscular relaxation, improving blood and lymph flow.",
+          method4Title: "Manual Therapy",
+          method4Desc: "Restoring joints and
